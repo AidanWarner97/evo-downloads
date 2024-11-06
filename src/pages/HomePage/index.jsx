@@ -98,21 +98,21 @@ const HomePage = () => {
             <div className="flex-1 bg-black rounded-3xl middleshadow truncate">
               <div className="flex items-center justify-between px-8 py-3 rounded-lg">
                 <div className="flex items-center space-x-2">
-                  <span className="font-[Prod-bold] text-3xl capitalize lg:text-3xl">Latest Files</span>
+                  <span className="font-[Prod-bold] text-xl capitalize">Latest Files</span>
                 </div>
               </div>
               <hr className="h-px border-0 bg-white" />
-              <div id="deviceList" className="space-y-4 px-4 py-4 text-xl lg:text-2xl">
-                <div className="space-y-4 px-4 py-4 text-xl lg:text-2xl">
+              <div id="deviceList" className="space-y-4 px-4 py-4 text-xl">
+                <div className="space-y-4 text-lg">
                   {files.map((file, index) => (
                     <div 
                     key={index}
                     className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom overflow-hidden whitespace-nowrap text-ellipsis">
-                      <p className="truncate">{file.directory}/{file.name}</p>
+                      <p className="truncate">{file.directory}</p>
                     </div>
                   ))}
                 </div>
-                <div className="space-y-4 px-4 py-4 text-xl lg:text-2xl">
+                <div className="space-y-4 text-lg">
                   <Link 
                   to="/files"
                   className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom">
@@ -126,11 +126,11 @@ const HomePage = () => {
             <div className="flex-1 bg-black rounded-3xl middleshadow">
               <div className="flex items-center justify-between px-8 py-3 rounded-lg">
                 <div className="flex items-center space-x-2">
-                  <span className="font-[Prod-bold] text-3xl capitalize lg:text-3xl">Downloads History</span>
+                  <span className="font-[Prod-bold] text-xl capitalize">Downloads History</span>
                 </div>
               </div>
               <hr className="h-px border-0 bg-white" />
-              <div id="deviceList" className="space-y-4 px-4 py-4 text-xl lg:text-2xl h-[520px]">
+              <div id="deviceList" className="space-y-4 px-4 py-4 text-lg h-[420px]">
                 <Line
                   data={chartData}
                   options={{
