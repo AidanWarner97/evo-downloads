@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import FilePage from "./pages/FilePage";
+import FilePage from "./pages/DirectoryPage";
+import DeviceFilePage from "./pages/DeviceFilePage";
+import DownloadPage from "./pages/DownloadPage";
 import UsersPage from "./pages/UsersPage";
 import AdminPage from "./pages/AdminPage";
 import Navbar from "./components/Navbar";
@@ -19,6 +21,8 @@ function App() {
               <Routes>
                 <Route index element={<HomePage />} />
                 <Route path="/files" element={<FilePage />} />
+                <Route path="/files/:deviceId" element={<DeviceFilePage />} />
+                <Route path="/files/:deviceId/:fileName" element={<DownloadPage />} />
                 <Route path="/users" element={<UsersPage />} />
                 <Route path="/admin" element={<AdminPage />} />
                 <Route path="*" element={<NotFound />} />

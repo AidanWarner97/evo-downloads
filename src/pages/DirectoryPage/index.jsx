@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom'
 const HomePage = () => {
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState("")
-  const [files, setFiles] = useState([])
-  const [devices, setDevices] = useState([])
+  const [devices] = useState([])
   const [directories, setDirectories] = useState([])
   const [filteredItems, setFilteredItems] = useState([])
 
@@ -70,18 +69,17 @@ const HomePage = () => {
               <hr className="h-px border-0 bg-white" />
               <div id="deviceList" className="space-y-4 px-4 py-4 text-lg">
                 {filteredItems.length > 0 ? (
-                    filteredItems.map((item, index) => (
-                      <Link 
-                        key={index} 
-                        to={`${item.name}`}
-                        className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom">
-                        <span>{item.name}</span>
-                        <span>X</span>
-                      </Link>
-                    ))
-                  ) : (
-                    <div className="text-gray-400">No items found</div>
-                  )}
+                  filteredItems.map((item, index) => (
+                    <Link 
+                      key={index} 
+                      to={`${item.name}`}
+                      className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom">
+                      <span>{item.name}</span>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="text-gray-400">No items found</div>
+                )}
               </div>
             </div>
           </div>

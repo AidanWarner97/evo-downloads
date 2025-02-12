@@ -24,7 +24,6 @@ const DevicePage = () => {
     }
   }, [deviceId]);
   
-
   // Fetch device data or display static content based on the deviceId
   return (
     <>
@@ -66,17 +65,17 @@ const DevicePage = () => {
                               className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom">
                                 <span>{file.name}</span>
                                 <span>{file.lastModified}</span>
+                                <span>X</span>
                             </Link>
                         ))}
+                            <Link 
+                              to={`/files`}
+                              className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom">
+                                Go back to device list.
+                            </Link>
                         </div>
                     )}
-                <div className="space-y-4 px-4 py-4 text-xl lg:text-2xl">
-                    <Link 
-                      to={`/`}
-                      className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom">
-                        Go back to device list.
-                    </Link>
-                </div>
+                    <span>Test</span>
               </div>
             </div>
           </div>

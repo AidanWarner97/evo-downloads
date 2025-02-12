@@ -11,7 +11,7 @@ const HomePage = () => {
   useEffect(() => {
     async function fetchFiles() {
       try {
-        const response = await fetch("https://assets.ndts.uk/fetch.php?latest=true")
+        const response = await fetch("https://assets.ndts.uk/fetch.php")
         const data = await response.json()
         setFiles(data)
         setLoading(false)
@@ -39,39 +39,14 @@ const HomePage = () => {
               <p>
                 <span className="evoxhighlight">Evolution X</span>
               </p>
-              <p>Downloads Management Portal</p>
+              <p>Administration Portal</p>
             </div>
           </div>
           <div className="MIDDLE z-40 flex gap-9 rounded-3xl px-8 pb-16 lg:px-16 lg:py-16">
-            {/* Latest Files */}
-            <div className="flex-1 bg-black rounded-3xl middleshadow">
-              <div className="flex items-center justify-between px-8 py-3 rounded-lg">
-                <div className="flex items-center space-x-2">
-                  <span className="font-[Prod-bold] text-3xl capitalize lg:text-3xl">Latest Files</span>
-                </div>
-              </div>
-              <hr className="h-px border-0 bg-white" />
-              <div id="deviceList" className="space-y-4 px-4 py-4 text-xl lg:text-2xl">
-                <div>
-                  {files.map((file, index) => (
-                    <div key={index}>
-                      <p>{files.name}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            {/* Downloads History */}
-            <div className="flex-1 bg-black rounded-3xl middleshadow">
-              <div className="flex items-center justify-between px-8 py-3 rounded-lg">
-                <div className="flex items-center space-x-2">
-                  <span className="font-[Prod-bold] text-3xl capitalize lg:text-3xl">Downloads History</span>
-                </div>
-              </div>
-              <hr className="h-px border-0 bg-white" />
-              <div id="deviceList" className="space-y-4 px-4 py-4 text-xl lg:text-2xl">
-                {/* Content here */}
+            {/* Available options */}
+            <div className="MIDDLE z-40 flex items-center">
+              <div className="rounded-full p-4 bg-slate-500">
+                Files
               </div>
             </div>
           </div>

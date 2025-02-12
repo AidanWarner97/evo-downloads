@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom"
 import evoXLogo from "../../assets/evoXLogo.svg"
 import menu from "../../assets/menu.svg"
 import menuClose from "../../assets/menuClose.svg"
+import silhouette from "../../assets/silhouette.jpg"
 
 export default function Sidebar() {
   const navRef = useRef(null)
@@ -59,6 +60,11 @@ export default function Sidebar() {
             </Link>
           </li>
         </ul>
+        <div className="absolute bottom-[10px] left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-lg w-[225px] grid grid-cols-2 grid-rows-2 gap-0 items-center">
+          <NavLink to={"account"} className="text-sm col-span-2 border-b border-gray-700 p-2 flex"><img src={silhouette} alt="Profile" height="24" width="24" className="mr-2"/>Username / Display Name</NavLink>
+          <NavLink to={"account/settings"} className="text-sm row-start-2 border-r border-gray-700 p-2"><span className="material-symbols-outlined">settings</span></NavLink>
+          <NavLink to={"logout"} className="text-sm row-start-2 p-2 text-right"><span className="material-symbols-outlined">logout</span></NavLink>
+        </div>
       </div>
 
       {/* Menu Icon - Only visible on small screens */}

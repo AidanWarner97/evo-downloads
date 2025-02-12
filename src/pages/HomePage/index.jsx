@@ -108,7 +108,7 @@ const HomePage = () => {
                     <div 
                     key={index}
                     className="flex items-center justify-between px-4 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition shadow-inner-custom overflow-hidden whitespace-nowrap text-ellipsis">
-                      <p className="truncate">{file.directory}</p>
+                      <p className="truncate">{file.directory}/{file.name}</p>
                     </div>
                   ))}
                 </div>
